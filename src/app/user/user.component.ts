@@ -18,8 +18,8 @@ export class UserComponent {
     return 'assets/users/' + this.avatar;
   }
 
-  public onSelectUser () {
-    this.select.emit();
-   }
+  onSelectUser () {
+    this.select.emit(this.id);
+  }
 
 }

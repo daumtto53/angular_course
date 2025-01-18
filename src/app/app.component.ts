@@ -17,7 +17,7 @@ export class AppComponent {
   users = DUMMY_USERS;
 
   onSelectUser(id: string) {
-    console.log("clicked in user: user name: " + id);
+    console.log("user clicked: " + id);
   }
 }
 
