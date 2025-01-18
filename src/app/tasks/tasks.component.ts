@@ -20,6 +20,10 @@ export class TasksComponent {
     return this.tasks.filter((entry) => entry.userId === this.userId)
   }
 
+  onComplete(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
 
 
 }
