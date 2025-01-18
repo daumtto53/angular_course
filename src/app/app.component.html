@@ -13,7 +13,8 @@
 
   <app-tasks
     *ngIf="selectedUser; else fallback"
-    [selectedName]="selectedUser!.name"
+    [name]="selectedUser!.name"
+    [userId]="selectedUser!.id"
   />
   <ng-template #fallback>
     <p id="fallback">fallback</p>
