@@ -9,11 +9,12 @@ import { TaskComponent } from "./tasks/task/task.component";
 import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 import { DatePipe, NgFor, NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
-    declarations: [AppComponent, HeaderComponent, UserComponent ,TasksComponent, TaskComponent, NewTaskComponent, CardComponent,],
+    declarations: [AppComponent, HeaderComponent, UserComponent ,TasksComponent, TaskComponent, NewTaskComponent, ],
     bootstrap: [AppComponent],
-    imports: [BrowserModule, FormsModule]
+    imports: [BrowserModule, FormsModule, SharedModule]
     
 })
 export class AppModule {
