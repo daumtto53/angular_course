@@ -34,6 +34,8 @@ export class TasksComponent {
     console.log(this.isAddTaskClicked);
   }
 
-
+  onAddTaskCanceled() {
+    this.isAddTaskClicked = false;
+  }
 
 }
