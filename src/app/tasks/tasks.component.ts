@@ -4,6 +4,7 @@ import { NgFor, NgIf} from '@angular/common';
 import { DUMMYTASKS } from './../dummy-tasks';
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { TaskSubmit } from './task/task.model';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -20,14 +21,11 @@ export class TasksComponent {
 
   isAddTaskClicked = false;
 
-  tasks = DUMMYTASKS;
-
-  get selectedUser() {
-    return this.tasks.filter((entry) => entry.userId === this.userId)
+  constructor(private tasksService: TasksService) {
   }
 
-  onComplete(id: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== id);
+  get selectedUser() {
+    return this.tasksService.getUserTasks(this.userId);
   }
 
   onAddTaskClick() {
@@ -40,14 +38,12 @@ export class TasksComponent {
   }
 
   onTaskAdded(taskSubmit: TaskSubmit) {
-    this.tasks.unshift({
-      id: new Date().getTime.toString(),
-      userId: this.userId,
-      title: taskSubmit.title,
-      summary: taskSubmit.summary,
-      dueDate: taskSubmit.date,
-    })
+    this.tasksService.addTask(taskSubmit, this.userId);
     this.isAddTaskClicked = false;
   }
+
+  onComplete(id: string) {
+  }
+
 
 }
