@@ -1,9 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from "./task/task.component";
-import { NgFor, NgIf} from '@angular/common';
-import { DUMMYTASKS } from './../dummy-tasks';
 import { NewTaskComponent } from "./new-task/new-task.component";
-import { TaskSubmit } from './task/task.model';
 import { TasksService } from './tasks.service';
 
 @Component({
