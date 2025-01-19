@@ -1,7 +1,7 @@
 <app-new-task
   *ngIf="isAddTaskClicked"
-  (cancel)="onAddTaskCanceled()"
-  (submit)="onTaskAdded($event)"
+  [userId]="userId"
+  (close)="onAddTaskCanceled()"
 />
 
 <section id="tasks">

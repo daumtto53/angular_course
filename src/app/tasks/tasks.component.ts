@@ -30,15 +30,9 @@ export class TasksComponent {
 
   onAddTaskClick() {
     this.isAddTaskClicked = true;
-    console.log(this.isAddTaskClicked);
   }
 
   onAddTaskCanceled() {
-    this.isAddTaskClicked = false;
-  }
-
-  onTaskAdded(taskSubmit: TaskSubmit) {
-    this.tasksService.addTask(taskSubmit, this.userId);
     this.isAddTaskClicked = false;
   }
 
