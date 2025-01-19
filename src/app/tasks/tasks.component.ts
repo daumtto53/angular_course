@@ -36,8 +36,4 @@ export class TasksComponent {
     this.isAddTaskClicked = false;
   }
 
-  onComplete(id: string) {
-  }
-
-
 }
