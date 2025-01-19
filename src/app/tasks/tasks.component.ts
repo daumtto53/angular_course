@@ -3,6 +3,7 @@ import { TaskComponent } from "./task/task.component";
 import { NgFor, NgIf} from '@angular/common';
 import { DUMMYTASKS } from './../dummy-tasks';
 import { NewTaskComponent } from "./new-task/new-task.component";
+import { TaskSubmit } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -35,6 +36,17 @@ export class TasksComponent {
   }
 
   onAddTaskCanceled() {
+    this.isAddTaskClicked = false;
+  }
+
+  onTaskAdded(taskSubmit: TaskSubmit) {
+    this.tasks.unshift({
+      id: new Date().getTime.toString(),
+      userId: this.userId,
+      title: taskSubmit.title,
+      summary: taskSubmit.summary,
+      dueDate: taskSubmit.date,
+    })
     this.isAddTaskClicked = false;
   }
 
